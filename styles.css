@@ -1,0 +1,436 @@
+body {
+    height: auto; /* Allow the height to grow with content */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('images/3d-gym-equipment.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Header styles */
+header {
+    position: relative;
+    background-color: #f01c1c;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    line-height: 1.5;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+
+.logo-barbell,
+.logo-body-builder {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid black;
+    opacity: 0;
+    animation: logo-appear 1s forwards;
+}
+
+.logo-barbell {
+    left: 10px;
+}
+
+.logo-body-builder {
+    right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 55px;
+    background-image: linear-gradient(to right, black 50%, red 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Wave effect */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent 0%, transparent 50%, #fff 50%, #fff 100%);
+    animation: wave 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes wave {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes logo-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* Navigation styles */
+nav {
+    text-align: center;
+    background-color: #444;
+    padding: 5px 0;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    position: relative; /* Ensure relative positioning */
+    z-index: 2; /* Ensure it is above the video */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    z-index: 3; /* Ensure dropdowns are above other content */
+}
+
+.dropbtn {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 4; /* Ensure dropdowns are above other content */
+}
+
+.dropdown-content a {
+    color: #444;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+/* Container styles */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    position: relative;
+    z-index: 0; /* Ensure it is below dropdowns and the footer */
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    margin-top: 20px; /* Ensure space for footer if it's fixed */
+    z-index: 1; /* Ensure it is above the .container */
+}
+
+/* Section styles */
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #444;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    position: relative; /* Ensure relative positioning */
+    z-index: 0; /* Ensure it is below dropdowns */
+}
+
+.section h2 {
+    color: #00ffc3;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.section p {
+    line-height: 1.6;
+}
+
+/* Member login form styles */
+.member-login {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    z-index: 1; /* Ensure it is above the background */
+    position: relative;
+}
+
+.member-login h2 {
+    text-align: center;
+    color: #f01c1c;
+    margin-bottom: 20px;
+}
+
+.member-login input[type="text"],
+.member-login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.member-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f01c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.member-login button:hover {
+    background-color: #d01b1b;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    margin-top: 20px; /* Ensure space for footer if it's fixed */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Services section specific styles */
+#services {
+    color: #00ff4c; /* Bright white color */
+    position: relative;
+    overflow: hidden;
+    z-index: 0; /* Ensure it is below dropdowns */
+}
+
+#services .section-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#services .section-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-content {
+    position: relative;
+    z-index: 1;
+}
+
+#services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#services ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    .member-login {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff; /* WhatsApp Green */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon img {
+    width: 69%; /* Adjust size as needed */
+    height: auto;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Barasat text with mini box */
+.barasat {
+    position: absolute; /* Position absolutely within the header */
+    top: 60%; /* Adjust as needed to move it down */
+    right: 29%; /* Adjust distance from the right edge */
+    font-size: 0.8em; /* Adjust font size as needed */
+    color: #000000; /* Adjust color if necessary */
+    text-align: center; /* Center the text */
+    display: flex; /* Use flexbox to align the box and text */
+    align-items: center; /* Vertically align items in the center */
+}
+
+.barasat::before {
+    content: ''; /* Ensure the pseudo-element has content */
+    display: inline-block; /* Make it an inline-block element */
+    width: 10px; /* Width of the box */
+    height: 10px; /* Height of the box */
+    background-color: #000; /* Color of the box */
+    margin-right: 5px; /* Space between the box and text */
+}
+
+.admission-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Admin and Member login styles */
+.login-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.admin-login, .member-login {
+    width: 45%; /* Adjust the width as needed */
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure it is above the background */
+    position: relative;
+}
+
+.admin-login h2, .member-login h2 {
+    text-align: center;
+    color: #f01c1c;
+    margin-bottom: 20px;
+}
+
+.admin-login input[type="text"], .admin-login input[type="password"], .member-login input[type="text"], .member-login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.admin-login button, .member-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f01c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-login button:hover, .member-login button:hover {
+    background-color: #d01b1b;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE WORKOUT ZONE GYM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admission.css"> <!-- New CSS file for Admission Form styling -->
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://maps.googleapis.com 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+</head>
+<body>
+    <header>
+        <!-- Logo for Barbell (orange part) -->
+        <img src="images/twzgymlogo.jpg" alt="Barbell Logo" class="logo-barbell">
+        <h1>Welcome to THE WORKOUT ZONE GYM<br><span class="barasat">BARASAT</span></h1>
+
+        <!-- Logo for Body Builder (yellow part) -->
+        <img src="images/twzgymlogo.jpg" alt="Body Builder Logo" class="logo-body-builder">
+    </header>
+    <nav>
+        <a href="admin-login.html" id="admin-login-button">Admin Login</a> <!-- New Admin Login option -->
+        <a href="login.html" id="login-button">Member Login</a> <!-- Member Login option -->
+        <a href="admission.html" id="admission-button">Admission Form</a>
+        <div class="dropdown">
+            <button class="dropbtn">Trainers</button>
+            <div class="dropdown-content">
+                <a href="#">SUNNY</a>
+                <a href="#">RAJA</a>
+                <a href="#">NIL</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Equipment</button>
+            <div class="dropdown-content">
+                <a href="#">Cardio Equipment</a>
+                <a href="#">Weight Lifting Equipment</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Contact</button>
+            <div class="dropdown-content">
+                <a href="tel:+919804565694" id="phone-number">+91 980-456-5694</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Location</button>
+            <div class="dropdown-content">
+                <a href="map.html">View Location</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <section id="services" class="section">
+            <div class="section-video">
+                <video autoplay muted loop>
+                    <source src="videos/gym.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="services-content">
+                <h2>Services</h2>
+                <ul>
+                    <li>GENERAL TRAINING</li>
+                    <li>PERSONAL TRAINING</li>
+                    <li>GROUP TRAINING</li>
+                    <li>ZUMBA</li>
+                    <li>YOGA</li>
+                    <li>KICKBOXING</li>
+                    <li>STRENGTH AND CARDIO TRAINING</li>
+                    <li>PHYSIO THERAPY</li>
+                    <li>STEAM BATH</li>
+                </ul>
+            </div>
+        </section>
+        <section id="trainers" class="section">
+            <h2>Meet Our Trainers</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero vitae dui interdum congue.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero vitae dui interdum congue.</p>
+        </section>
+        <section id="address" class="section">
+            <h2>Visit Us</h2>
+            <p>PF7H+FRG, KNC Rd, Gupta Colony, Barasat, Kolkata, West Bengal 700124</p>
+            <div id="map-container"></div>
+            <p><a href="https://maps.app.goo.gl/H8sZHJwhcdkCs4bR8" target="_blank">View location on external map</a></p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 TWZ Gym. All rights reserved.</p>
+    </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="script.js"></script>
+    
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/919804565694" class="whatsapp-icon" target="_blank" title="WhatsApp">
+        <img src="images/whatsapp2.png" alt="WhatsApp Icon">
+    </a>
+</body>
+</html>
